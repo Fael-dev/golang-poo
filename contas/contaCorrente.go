@@ -1,10 +1,12 @@
 package contas
 
+import c "golang-poo/clientes"
+
 type ContaCorrente struct {
-	Titular       string
-	NumeroAgencia int
-	NumeroConta   int
-	Saldo         float64
+	Titular             c.Titular
+	NumeroAgencia       int
+	NumeroConta   		int
+	Saldo         		float64
 }
 
 func (c *ContaCorrente) Sacar(valorSaque float64) string {

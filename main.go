@@ -3,18 +3,11 @@ package main
 import (
 	"fmt"
 	c "golang-poo/contas"
+	cl "golang-poo/clientes"
 )
 
 func main(){
-	conta1 := c.ContaCorrente{Titular: "Rafael", Saldo: 25.80}
-	conta2 := c.ContaCorrente{Titular: "Beatriz", Saldo: 2900.80}
-
-	fmt.Println("=========================== Valores antes da transferencia ===========================")
-	fmt.Println(conta1)
-	fmt.Println(conta2)
-	fmt.Println("=========================== Valores depois da transferencia ===========================")
-	status := conta2.Transferir(1000, &conta1)
-	fmt.Println(conta1)
-	fmt.Println(conta2)
-	fmt.Println(status)
+	cliente := cl.Titular{Nome: "Rafael", Cpf: "083.324.094.90", Profissao: "Desenvolvedor"}
+	conta := c.ContaCorrente{Titular: cliente, NumeroAgencia: 1234, NumeroConta: 5678, Saldo: 200}
+	fmt.Println(conta)
 }
